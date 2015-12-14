@@ -3,7 +3,7 @@ String alphabet = 'abcdefghijklmnopqrstuvwxyz';
 List<int> forbiddenLetters = ['i', 'o', 'l'].map(numberForLetter).toList();
 
 main() {
-  List<int> letters = 'hepxcrrq'.codeUnits.map((code) => new String.fromCharCode(code)).map(numberForLetter).toList();
+  List<int> letters = 'hepxcrrq'.split('').map(numberForLetter).toList();
 
   while (!isValid(letters)) {
     increaseLetters(letters);

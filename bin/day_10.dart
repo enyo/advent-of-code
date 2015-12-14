@@ -2,7 +2,7 @@ import 'dart:io';
 
 main() async {
   DateTime start, end;
-  var input = '1113122113'.codeUnits.map((number) => new String.fromCharCode(number)).map(int.parse).toList();
+  var input = '1113122113'.split('').map(int.parse).toList();
 
   start = new DateTime.now();
   for (var i = 0; i < 50; i++) {
@@ -12,14 +12,8 @@ main() async {
   end = new DateTime.now();
   print(end.difference(start));
 
-
   // Now with bools to see if it's more efficient
-  var inputBool = '1113122113'
-      .codeUnits
-      .map((number) => new String.fromCharCode(number))
-      .map(int.parse)
-      .map(_numberToBool)
-      .toList();
+  var inputBool = '1113122113'.split('').map(int.parse).map(_numberToBool).toList();
 
   start = new DateTime.now();
   for (var i = 0; i < 50; i++) {
