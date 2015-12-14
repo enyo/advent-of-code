@@ -3,3 +3,5 @@ version: 0.0.1
 description: A simple console application.
 #dependencies:
 #  foo_bar: '>=1.0.0 <2.0.0'
+dependencies:
+  crypto: '>=0.9.1 <0.10.0'
