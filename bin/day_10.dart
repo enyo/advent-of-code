@@ -1,4 +1,3 @@
-import 'dart:io';
 
 main() async {
   DateTime start, end;
@@ -16,7 +15,7 @@ main() async {
 List<int> lookAndSay(List<int> input) {
   int prevNumber = null;
   var numberCount = 0;
-  var newList = [];
+  var newList = <int>[];
   input.forEach((number) {
     if (prevNumber == number) {
       numberCount++;

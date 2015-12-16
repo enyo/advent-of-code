@@ -24,15 +24,13 @@ isNice(String input) {
   if (match == null) return false;
 
   // It does not contain the strings ab, cd, pq, or xy, even if they are part of one of the other requirements.
-  var contains = ['ab', 'cd', 'pq', 'xy'].firstWhere((forbidden) { return input.contains(forbidden); }, orElse: () => null);
+  var contains = ['ab', 'cd', 'pq', 'xy'].firstWhere((forbidden) => input.contains(forbidden), orElse: () => null);
   if (contains != null) return false;
 
   return true;
 }
 
 isNice2(String input) {
-  Iterable<Match> matches;
-
   // It contains a pair of any two letters that appears at least twice in the string without overlapping, like xyxy (xy)
   // or aabcdefgaa (aa), but not like aaa (aa, but it overlaps).
   var twoLetterPairs = <String>[];

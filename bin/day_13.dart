@@ -5,7 +5,7 @@ main() async {
   var input = await new File('bin/day_13_input.txt').readAsString();
 
   // Parse all strings
-  input.split('\n').forEach((input) => new HappinessInfo.fromString(input));
+  input.split('\n').forEach((input) { new HappinessInfo.fromString(input); });
 
   print('**Star 1**');
   solve(getPermutations(persons));
@@ -48,13 +48,13 @@ int getBestHappiness(List<List<Person>> permutations) {
 }
 
 List<List<Person>> getPermutations(List<Person> persons) {
-  var permutations = [];
+  var permutations = <List<Person>>[];
   for (var i = 0; i < persons.length; i++) {
     var first = persons[i];
     if (persons.length > 1) {
       var personsWithoutFirst = persons.toList()..removeAt(i);
-      getPermutations(personsWithoutFirst).forEach((remainingPermutation) {
-        permutations.add([first]..addAll(remainingPermutation));
+      getPermutations(personsWithoutFirst).forEach((List<Person> remainingPermutation) {
+        permutations.add(<Person>[first]..addAll(remainingPermutation));
       });
     } else {
       permutations.add([first]);

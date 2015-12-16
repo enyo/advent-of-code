@@ -1,4 +1,3 @@
-import 'dart:io';
 
 /// This was just a test to see if it's faster to work with bool and null values instead of ints.
 main() async {
@@ -26,7 +25,7 @@ List<bool> lookAndSayBool(List<bool> input) {
   bool first = true;
   bool prevNumber = null;
   var numberCount = 0;
-  var newList = [];
+  var newList = <bool>[];
   input.forEach((number) {
     if (first) {
       prevNumber = number;
